@@ -7,7 +7,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #5757ff96, #8538cd9f); /* Dégradé de bleu vers violet */
+    background: linear-gradient(135deg, #6464ff, #a84cff); /* Dégradé de bleu vers violet */
     color: white; /* Texte en blanc pour un meilleur contraste */
     min-height: 100vh; /* Pour que le fond couvre toute la hauteur de la page */
     display: flex;
@@ -16,8 +16,11 @@ body {
 
 header {
     display: flex;
-    justify-content: left;
-    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    width: 40vw;
+    height: auto;
 }
 
 /* .logo {
@@ -25,19 +28,31 @@ header {
     cursor: pointer;
 } */
 
-header {
-    padding: 30px;
-}
-
 .logo-text {
     font-weight: bold;
     text-decoration: none;
-    background: linear-gradient(45deg, #0000ff, #8a2be2); /* Dégradé violet vers bleu */
+    background: linear-gradient(45deg, #0000ff, #8400ff); /* Dégradé violet vers bleu */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
     cursor: pointer;
     font-family: 'Comfortaa';font-size: 2em;
+}
+
+.create {
+    background-color: none; /* Couleur violette pour s'harmoniser avec le logo */
+    text-decoration: none;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 1.3em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.create:hover {
+    background-color: #8e2cfe; /* Change en bleu au survol */
 }
 
 main {
@@ -53,18 +68,26 @@ form {
     width: 300px;
 }
 
+section {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
 label, input, button {
     margin-bottom: 10px;
+    border-radius: 5px;
 }
 
 button {
     padding: 10px;
-    background-color: #4CAF50;
+    background-color: #8400ff;
     color: white;
     border: none;
     cursor: pointer;
+    border-radius: 7px;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #7c00f1;
 }

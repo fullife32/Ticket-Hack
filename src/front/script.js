@@ -19,6 +19,7 @@ document.getElementById('ticketForm').addEventListener('submit', async (e) => {
         // Envoie les données à l'API
         const response = await fetch('http://localhost:5000/tickets', {
             method: 'POST',
+			mode: "no-cors",
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -28,7 +29,7 @@ document.getElementById('ticketForm').addEventListener('submit', async (e) => {
         // Vérifie la réponse de l'API
         if (response.ok) {
             alert('Tickets successfully created !');
-			fetchTickets();
+			// fetchTickets();
         } else {
             alert('Error creating tickets.');
         }
@@ -43,6 +44,7 @@ async function fetchTickets() {
     try {
         const response = await fetch('http://localhost:5000/tickets', {
             method: 'GET',
+			mode: "no-cors",
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -74,13 +76,3 @@ async function fetchTickets() {
         console.error('Error:', error);
     }
 }
-
-
-// Appel initial pour charger les tickets au chargement de la page
-document.addEventListener('DOMContentLoaded', fetchTickets);
-
-// "consumed": false,
-//             "event_date": "Tue, 05 Nov 2024 00:00:00 GMT",
-//             "event_name": "La fête du slip",
-//             "id": "0e5fff3f-c93e-4b1f-820c-eee101b73ad5",
-//             "price": 1.0
