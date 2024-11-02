@@ -1,7 +1,9 @@
 from flask import Flask, jsonify, request
+from flask_cors import CORS
 from ticket_sdk.ticket import TicketEmitterDto, TicketsManager
 
 app = Flask(__name__)
+CORS(app)
 
 app.config["APPLICATION_ROOT"] = "/api/v1"
 
