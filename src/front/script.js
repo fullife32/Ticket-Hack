@@ -60,7 +60,7 @@ async function fetchTickets() {
 
                 tickets.forEach(ticket => {
                     const listItem = document.createElement('li');
-                    listItem.textContent = `Ticket for ${ticket.event_name} at ${ticket.price}$ (${ticket.id}) ${ticket.event_date}`;
+                    listItem.textContent = `Ticket for ${ticket.event_name} at ${ticket.price} algo (${ticket.id}) ${ticket.event_date}`;
                     ticketList.appendChild(listItem);
                 });
             } else {
@@ -79,8 +79,8 @@ async function fetchTickets() {
 // Appel initial pour charger les tickets au chargement de la page
 document.addEventListener('DOMContentLoaded', fetchTickets);
 
-"consumed": false,
-            "event_date": "Tue, 05 Nov 2024 00:00:00 GMT",
-            "event_name": "La fête du slip",
-            "id": "0e5fff3f-c93e-4b1f-820c-eee101b73ad5",
-            "price": 1.0
+// "consumed": false,
+//             "event_date": "Tue, 05 Nov 2024 00:00:00 GMT",
+//             "event_name": "La fête du slip",
+//             "id": "0e5fff3f-c93e-4b1f-820c-eee101b73ad5",
+//             "price": 1.0
