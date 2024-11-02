@@ -1,9 +1,9 @@
 from flask import Flask, jsonify, request
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 from ticket_sdk.ticket import TicketEmitterDto, TicketsManager
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/tickets": {"origins": "*"}})
 
 app.config["APPLICATION_ROOT"] = "/api/v1"
 
@@ -11,7 +11,17 @@ app.config["APPLICATION_ROOT"] = "/api/v1"
 # Yes this is shit, it ain't much but it's honest work!
 tickets_manager = TicketsManager()
 
-@app.route("/tickets", methods=["POST"])
+@app.before_request
+def before_request():
+    headers = {
+        'Access-Control-Allow-Origin': '*', 
+        'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS', 
+        'Access-Control-Allow-Headers': 'Content-Type'
+    }
+    if request.method == 'OPTIONS' or request.method == 'options':
+        return jsonify(headers), 200
+
+@app.route("/tickets", methods=["POST", "OPTIONS"])
 def create_tickets():
     print("GOT REQUEST")
     try:
@@ -31,7 +41,7 @@ def create_tickets():
         }), 400
 
 
-@app.route("/tickets", methods=["GET"])
+@app.route("/tickets", methods=["GET", "OPTIONS"])
 def get_tickets():
     try:
         return jsonify({
