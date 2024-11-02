@@ -6,4 +6,4 @@
   - Nom événements
   - Prix unitaire
   - Date de l'événement
-  - Date max d'achat
+  - Date max d'achat       
