@@ -1,2 +1,4 @@
 dataclasses-json
 flask
+pydantic
+py-algorand-sdk
